@@ -1,0 +1,103 @@
+.Navbar .navbar {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.Navbar form {
+  display: inline;
+  margin: 0;
+}
+
+.Navbar .search-input {
+  border: 2px solid #b7dcff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #e2faff;
+  padding: 6px 12px;
+  color: #42a4ff;
+}
+
+.Navbar .search-input:focus-visible {
+  background-color: #e2faff;
+  border: 2px solid #b7dcff;
+  outline-color: #a4a7ff !important;
+  color: #42a4ff;
+}
+
+.Navbar ::placeholder {
+  color: #b7dcff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  padding: 6px 12px;
+}
+
+.Navbar .search-button {
+  border: 2px solid #42a4ff;
+  background-color: #e2faff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #42a4ff;
+  font-family: "Roboto", sans-serif;
+  padding: 6px 12px;
+}
+
+.Navbar .search-button:hover {
+  border: 2px solid #0b5ed7;
+  background: linear-gradient(
+    104.9deg,
+    #c4b6ff 4.92%,
+    #c4b6ff 6.69%,
+    #a4a7ff 29.7%,
+    #99bcff 51.77%,
+    #4ab0fe 72.24%,
+    #42a4ff 89.49%
+  );
+  color: #ffffff;
+}
+
+.Navbar .current-location-button {
+  display: inline;
+  width: max-content;
+  background-color: #42a4ff;
+  border: 1px solid #42a4ff;
+  border-radius: 5px;
+  padding: 6px 12px;
+  color: #ffffff;
+}
+
+.Navbar .current-location-button:hover {
+  border: 1px solid #42a4ff;
+  background: linear-gradient(
+    104.9deg,
+    #c4b6ff 4.92%,
+    #c4b6ff 6.69%,
+    #a4a7ff 29.7%,
+    #99bcff 51.77%,
+    #4ab0fe 72.24%,
+    #42a4ff 89.49%
+  );
+  color: #ffffff;
+}
+
+.Navbar .temperature-unit-button {
+  background-color: #b7dcff;
+  border: 1px solid #b7dcff;
+  border-radius: 5px;
+  color: #42a4ff;
+  font-family: "Roboto", sans-serif;
+  padding: 6px 12px;
+}
+
+.Navbar .temperature-unit-button:hover {
+  border: 1px solid #0b5ed7;
+  background: linear-gradient(
+    104.9deg,
+    #c4b6ff 4.92%,
+    #c4b6ff 6.69%,
+    #a4a7ff 29.7%,
+    #99bcff 51.77%,
+    #4ab0fe 72.24%,
+    #42a4ff 89.49%
+  );
+  color: #ffffff;
+}

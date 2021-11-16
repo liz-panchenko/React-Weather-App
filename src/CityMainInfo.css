@@ -1,0 +1,69 @@
+.CityMainInfo h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #42a4ff;
+}
+
+.CityMainInfo h2 {
+  text-align: left;
+  font-size: 2.5rem;
+}
+
+.CityMainInfo ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.CityMainInfo .main-icon {
+  display: block;
+  margin: 0 auto;
+  width: 12em;
+  height: auto;
+  padding-left: 30px;
+}
+
+.CityMainInfo .date-details-container {
+  background: linear-gradient(#e2faff, #e2faff) padding-box,
+    linear-gradient(
+        104.9deg,
+        #c4b6ff 4.92%,
+        #c4b6ff 6.69%,
+        #a4a7ff 29.7%,
+        #99bcff 51.77%,
+        #4ab0fe 72.24%,
+        #42a4ff 89.49%
+      )
+      border-box;
+  color: #42a4ff;
+  opacity: 0.8;
+  font-weight: normal;
+  font-size: 1.2rem;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin: 0 12px;
+  padding: 10px 10px;
+}
+
+.CityMainInfo .main-temp-container,
+.CityMainInfo .card-text {
+  background: linear-gradient(
+    104.9deg,
+    #c4b6ff 4.92%,
+    #c4b6ff 6.69%,
+    #a4a7ff 29.7%,
+    #99bcff 51.77%,
+    #4ab0fe 72.24%,
+    #42a4ff 89.49%
+  );
+  border-radius: 15px;
+  /* background: linear-gradient(to right, #30CFD0 0%, #330867 100%); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.CityMainInfo .weather-description {
+  font-size: 20px;
+}

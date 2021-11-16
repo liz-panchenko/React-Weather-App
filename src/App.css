@@ -1,0 +1,46 @@
+body {
+  background-color: #e2faff;
+  font-family: "Raleway", sans-serif;
+}
+
+.App .main-container {
+  max-width: 90%;
+  box-shadow: -12px -8px 20px 8px rgba(255, 255, 255, 0.55),
+    10px 13px 20px 5px rgba(0, 26, 255, 0.05);
+  background-color: #e2faff;
+  border-radius: 4px;
+  margin: 15px auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 414px) {
+  .search-button-text {
+    display: none;
+  }
+  .search-input {
+    min-width: 40%;
+  }
+}
+
+@media screen and (min-width: 415px) {
+  .search-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .current-location-button-text {
+    display: none;
+  }
+  .search-input {
+    max-width: 50%;
+    padding: 6px 10px !important;
+  }
+  .main-container {
+    max-width: 100%;
+  }
+  .date-details-container {
+    text-align: center !important;
+  }
+}
