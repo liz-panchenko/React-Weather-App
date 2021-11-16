@@ -35,10 +35,19 @@ export default function CityMainInfo(props) {
             <div className="row date-details-container">
               <div className="col-xs-12 col-sm-7 details-container">
                 <ul>
-                  <li id="humidity-info">Humidity: 70%</li>
-                  <li id="wind-speed-info">Wind: 5mph</li>
-                  <li id="feels-like-info">
-                    Feels like:<span className="feelsLikecTemp"> 16</span>°C
+                  <li>
+                    Humidity: {props.searchResults.main.humidity}%
+                  </li>
+                  <li>
+                    Wind: {Math.round(props.searchResults.wind.speed)} m/s
+                  </li>
+                  <li>
+                    Feels like:
+                    <span className="feelsLikecTemp">
+                      {" "}
+                      {Math.round(props.searchResults.main.feels_like)}
+                    </span>
+                    °C
                   </li>
                 </ul>
               </div>

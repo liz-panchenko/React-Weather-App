@@ -9,6 +9,11 @@ export default function App() {
     name: "London",
     main: {
       temp: 16,
+      feels_like: 15,
+      humidity: 70,
+    },
+    wind: {
+      speed: 5.33
     },
   });
 
