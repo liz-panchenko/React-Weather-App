@@ -7,13 +7,12 @@ export default function SearchEngine(props) {
     event.preventDefault();
     let apiKey = "a96f5721c6287ed7127e00501efd3d4f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(getApiInfo);
   }
   function getApiInfo(response) {
-    alert(
-      `Weather in ${searchInput} is ${Math.round(response.data.main.temp)}°C`
-    );
+    // alert(
+    //   `Weather in ${searchInput} is ${Math.round(response.data.main.temp)}°C`
+    // );
     props.setSearchResults(response.data);
   }
   function updateSearchInput(event) {
