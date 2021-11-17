@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="main-container">
+        <div className="main-container px-md-2">
           <Navbar setSearchResults={setSearchResults} />
           <CityMainInfo searchResults={searchResults} />
         </div>
