@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function SearchEngine(props) {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [searchInput, setSearchInput] = useState("Prague");
+  const [searchInput, setSearchInput] = useState("London");
   if (isLoaded) {
     return (
       <form className="SearchEngine" onSubmit={handleSubmit}>

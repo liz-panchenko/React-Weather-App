@@ -1,30 +1,39 @@
 import React from "react";
 import "./CityMainInfo.css";
 import CurrentDate from "./CurrentDate";
+import ClearSky from "./images/1.clear_sky.png";
+import NightClearSky from "./images/1n.clear_sky.png";
+import FewClouds from "./images/2.few_clouds.png";
+import NightFewClouds from "./images/2n.few_clouds.png";
+import Clouds from "./images/3.4.clouds.png";
+import Rain from "./images/09.10.rain.png";
+import Thunderstorm from "./images/11.thunderstorm.png";
+import Snow from "./images/13.snow.png";
+import Mist from "./images/50.mist.png";
+import NightMist from "./images/50n.mist.png";
 
 export default function CityMainInfo(props) {
-
   let apiIcon = props.searchResults.weather[0].icon;
-let iconObject = {
-  "01d": "./images/1.clear_sky.png",
-  "01n": "./images/1n.clear_sky.png",
-  "02d": "./images/2.few_clouds.png",
-  "02n": "./images/2n.few_clouds.png",
-  "03d": "./images/3.4.clouds.png",
-  "03n": "./images/3.4.clouds.png",
-  "04d": "./images/3.4.clouds.png",
-  "04n": "./images/3.4.clouds.png",
-  "09d": "./images/09.10.rain.png",
-  "09n": "./images/09.10.rain.png",
-  "10d": "./images/09.10.rain.png",
-  "10n": "./images/09.10.rain.png",
-  "11d": "./images/11.thunderstorm.png",
-  "11n": "./images/11.thunderstorm.png",
-  "13d": "./images/13.snow.png",
-  "13n": "./images/13.snow.png",
-  "50d": "./images/50.mist.png",
-  "50n": "./images/50n.mist.png",
-};
+  let iconObject = {
+    "01d": ClearSky,
+    "01n": NightClearSky,
+    "02d": FewClouds,
+    "02n": NightFewClouds,
+    "03d": Clouds,
+    "03n": Clouds,
+    "04d": Clouds,
+    "04n": Clouds,
+    "09d": Rain,
+    "09n": Rain,
+    "10d": Rain,
+    "10n": Rain,
+    "11d": Thunderstorm,
+    "11n": Thunderstorm,
+    "13d": Snow,
+    "13n": Snow,
+    "50d": Mist,
+    "50n": NightMist,
+  };
 
   return (
     <div className="CityMainInfo">
