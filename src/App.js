@@ -16,6 +16,9 @@ export default function App() {
       speed: 5.33,
     },
     dt: "1637668833",
+    weather: [
+      {icon: "10d"}
+    ]
   });
 
   return (

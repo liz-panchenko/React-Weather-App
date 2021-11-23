@@ -1,9 +1,31 @@
 import React from "react";
-import WeatherImg from "./images/3.4.clouds.png";
 import "./CityMainInfo.css";
 import CurrentDate from "./CurrentDate";
 
 export default function CityMainInfo(props) {
+
+  let apiIcon = props.searchResults.weather[0].icon;
+let iconObject = {
+  "01d": "./images/1.clear_sky.png",
+  "01n": "./images/1n.clear_sky.png",
+  "02d": "./images/2.few_clouds.png",
+  "02n": "./images/2n.few_clouds.png",
+  "03d": "./images/3.4.clouds.png",
+  "03n": "./images/3.4.clouds.png",
+  "04d": "./images/3.4.clouds.png",
+  "04n": "./images/3.4.clouds.png",
+  "09d": "./images/09.10.rain.png",
+  "09n": "./images/09.10.rain.png",
+  "10d": "./images/09.10.rain.png",
+  "10n": "./images/09.10.rain.png",
+  "11d": "./images/11.thunderstorm.png",
+  "11n": "./images/11.thunderstorm.png",
+  "13d": "./images/13.snow.png",
+  "13n": "./images/13.snow.png",
+  "50d": "./images/50.mist.png",
+  "50n": "./images/50n.mist.png",
+};
+
   return (
     <div className="CityMainInfo">
       <div className="row">
@@ -12,7 +34,7 @@ export default function CityMainInfo(props) {
           <div className="row">
             <div className="col-7">
               <img
-                src={WeatherImg}
+                src={iconObject[apiIcon]}
                 className="main-icon img-fluid"
                 id="main-icon"
                 alt="cloudy"
