@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function SearchEngine(props) {
-  const [searchInput, setSearchInput] = useState("London");
+  const [searchInput, setSearchInput] = useState(null);
   function handleSubmit(event) {
     event.preventDefault();
     let apiKey = "a96f5721c6287ed7127e00501efd3d4f";
@@ -10,9 +10,6 @@ export default function SearchEngine(props) {
     axios.get(apiUrl).then(getApiInfo);
   }
   function getApiInfo(response) {
-    // alert(
-    //   `Weather in ${searchInput} is ${Math.round(response.data.main.temp)}°C`
-    // );
     props.setSearchResults(response.data);
   }
   function updateSearchInput(event) {

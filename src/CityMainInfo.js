@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherImg from "./images/3.4.clouds.png";
 import "./CityMainInfo.css";
+import CurrentDate from "./CurrentDate";
 
 export default function CityMainInfo(props) {
   return (
@@ -35,9 +36,7 @@ export default function CityMainInfo(props) {
             <div className="row date-details-container">
               <div className="col-xs-12 col-sm-7 details-container">
                 <ul>
-                  <li>
-                    Humidity: {props.searchResults.main.humidity}%
-                  </li>
+                  <li>Humidity: {props.searchResults.main.humidity}%</li>
                   <li>
                     Wind: {Math.round(props.searchResults.wind.speed)} m/s
                   </li>
@@ -53,11 +52,7 @@ export default function CityMainInfo(props) {
               </div>
 
               <div className="col-xs-12 col-sm-5 date-container">
-                <ul>
-                  <li>Last update</li>
-                  <li id="current-date">Wed Aug 9</li>
-                  <li id="current-time">11:23</li>
-                </ul>
+                <CurrentDate dt={props.searchResults.dt} />
               </div>
             </div>
           </div>

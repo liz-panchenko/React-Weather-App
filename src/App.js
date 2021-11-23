@@ -13,8 +13,9 @@ export default function App() {
       humidity: 70,
     },
     wind: {
-      speed: 5.33
+      speed: 5.33,
     },
+    dt: "1637668833",
   });
 
   return (
