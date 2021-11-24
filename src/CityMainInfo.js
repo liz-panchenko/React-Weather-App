@@ -12,8 +12,8 @@ import Snow from "./images/13.snow.png";
 import Mist from "./images/50.mist.png";
 import NightMist from "./images/50n.mist.png";
 
-export default function CityMainInfo(props) {
-  let apiIcon = props.searchResults.weather[0].icon;
+export default function CityMainInfo({ searchResults, fUnits }) {
+  let apiIcon = searchResults.weather[0].icon;
   let iconObject = {
     "01d": ClearSky,
     "01n": NightClearSky,
@@ -35,28 +35,63 @@ export default function CityMainInfo(props) {
     "50n": NightMist,
   };
 
+  function mainTemp(searchResults) {
+    let mainCTemp = Math.round(searchResults.main.temp);
+    let mainFTemp = Math.round((mainCTemp * 9) / 5 + 32);
+    if (fUnits) {
+      return (
+        <div>
+          <span>{mainFTemp}</span>
+          °F
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <span>{mainCTemp}</span>
+          °C
+        </div>
+      );
+    }
+  }
+
+  function feelsLikeTemp(searchResults) {
+    let feelsLikeTempC = Math.round(searchResults.main.feels_like);
+    let feelsLikeTempF = Math.round((feelsLikeTempC * 9) / 5 + 32);
+    if (fUnits) {
+      return (
+        <span>
+          <span> {feelsLikeTempF}</span>
+          °F
+        </span>
+      );
+    } else {
+      return (
+        <span>
+          <span> {feelsLikeTempC}</span>
+          °C
+        </span>
+      );
+    }
+  }
+  
   return (
     <div className="CityMainInfo">
       <div className="row">
         <div className="col-xs-12 col-md-6 col-xl-7 mt-5">
-          <h1>{props.searchResults.name}</h1>
+          <h1>{searchResults.name}</h1>
           <div className="row">
             <div className="col-7">
               <img
                 src={iconObject[apiIcon]}
                 className="main-icon img-fluid"
-                alt={props.searchResults.weather[0].description}
+                alt={searchResults.weather[0].description}
               />
             </div>
             <h2 className="col-5 main-temp-container">
-              <div>
-                <span className="cTemp">
-                  {Math.round(props.searchResults.main.temp)}
-                </span>
-                °C
-              </div>
+              {mainTemp(searchResults)}
               <div className="weather-description">
-                {props.searchResults.weather[0].main}
+                {searchResults.weather[0].main}
               </div>
             </h2>
           </div>
@@ -66,23 +101,17 @@ export default function CityMainInfo(props) {
             <div className="row date-details-container">
               <div className="col-xs-12 col-sm-7 details-container">
                 <ul>
-                  <li>Humidity: {props.searchResults.main.humidity}%</li>
-                  <li>
-                    Wind: {Math.round(props.searchResults.wind.speed)} m/s
-                  </li>
+                  <li>Humidity: {searchResults.main.humidity}%</li>
+                  <li>Wind: {Math.round(searchResults.wind.speed)} m/s</li>
                   <li>
                     Feels like:
-                    <span className="feelsLikecTemp">
-                      {" "}
-                      {Math.round(props.searchResults.main.feels_like)}
-                    </span>
-                    °C
+                    {feelsLikeTemp(searchResults)}
                   </li>
                 </ul>
               </div>
 
               <div className="col-xs-12 col-sm-5 date-container">
-                <CurrentDate dt={props.searchResults.dt} />
+                <CurrentDate dt={searchResults.dt} />
               </div>
             </div>
           </div>
