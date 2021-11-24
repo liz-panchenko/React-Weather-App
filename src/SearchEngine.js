@@ -21,7 +21,6 @@ export default function SearchEngine(props) {
       </form>
     );
   } else {
-    console.log("tttttt");
     makeAPIrequest();
     return <div>Loading....</div>;
   }
@@ -30,11 +29,9 @@ export default function SearchEngine(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getApiInfo);
     setIsLoaded(true);
-    console.log(apiUrl);
   }
   function getApiInfo(response) {
     props.setSearchResults(response.data);
-    console.log(response.data);
   }
 
   function handleSubmit(event) {

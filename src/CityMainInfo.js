@@ -39,25 +39,24 @@ export default function CityMainInfo(props) {
     <div className="CityMainInfo">
       <div className="row">
         <div className="col-xs-12 col-md-6 col-xl-7 mt-5">
-          <h1 id="main-city">{props.searchResults.name}</h1>
+          <h1>{props.searchResults.name}</h1>
           <div className="row">
             <div className="col-7">
               <img
                 src={iconObject[apiIcon]}
                 className="main-icon img-fluid"
-                id="main-icon"
-                alt="cloudy"
+                alt={props.searchResults.weather[0].description}
               />
             </div>
             <h2 className="col-5 main-temp-container">
-              <div id="main-city-temp">
+              <div>
                 <span className="cTemp">
                   {Math.round(props.searchResults.main.temp)}
                 </span>
                 °C
               </div>
-              <div className="weather-description" id="weather-description">
-                Clouds
+              <div className="weather-description">
+                {props.searchResults.weather[0].main}
               </div>
             </h2>
           </div>
