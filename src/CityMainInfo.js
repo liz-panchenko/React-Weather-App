@@ -1,6 +1,6 @@
 import React from "react";
 import "./CityMainInfo.css";
-import CurrentDate from "./CurrentDate";
+import LastUpdateDate from "./LastUpdateDate";
 import MainIcon from "./MainIcon";
 
 export default function CityMainInfo({ searchResults, fUnits }) {
@@ -76,7 +76,7 @@ export default function CityMainInfo({ searchResults, fUnits }) {
               </div>
 
               <div className="col-xs-12 col-sm-5 date-container">
-                <CurrentDate dt={searchResults.dt} />
+                <LastUpdateDate dt={searchResults.dt} />
               </div>
             </div>
           </div>
