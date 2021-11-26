@@ -1,7 +1,11 @@
 import React from "react";
 import "./Forecast.css";
+import ForecastIcon from "./ForecastIcon";
 
-export default function Forecast({ fUnits, weekday }) {
+export default function Forecast({ fUnits, forecastResults }) {
+  console.log(forecastResults[0]);
+  //   console.log("aaaaa");
+  // let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   function forecastTemp() {
     //   let forecastCTemp = Math.round(searchResults.main.temp);
     let forecastCTemp = 18;
@@ -23,18 +27,15 @@ export default function Forecast({ fUnits, weekday }) {
     }
   }
   return (
+    //   {weekdays.map(function(weekday, index){})}
     <div className="Forecast col-sm-4 col-md my-2">
       <div className="card text-center weather-card">
         <div className="card-body">
-          <div className="card-title">{weekday}</div>
-          <img
-            src="${cardIcon(dailyForecast.weather[0].icon)}"
-            className="card-img"
-            alt="clouds"
-          />
-          <p className="card-text">
+          <div className="card-title">Mon</div>
+          <ForecastIcon />
+          <div className="card-text">
             <span className="daily-temp card-CTemp">{forecastTemp()}</span>
-          </p>
+          </div>
         </div>
       </div>
     </div>

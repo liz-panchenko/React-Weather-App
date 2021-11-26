@@ -6,21 +6,33 @@ import Forecast from "./Forecast";
 import "./App.css";
 
 export default function App() {
+  console.log("vvv");
   const [fUnits, setFUnits] = useState(false);
-  const [forecastResults, setForecastResults] = useState(null);
-  const [searchResults, setSearchResults] = useState({
-    name: "London",
-    main: {
-      temp: 16,
-      feels_like: 15,
-      humidity: 70,
-    },
-    wind: {
-      speed: 5.33,
-    },
-    dt: "1637668833",
-    weather: [{ icon: "10d", main: "Clouds", description: "few clouds" }],
-  });
+  const [forecastResults, setForecastResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(null);
+
+  function displayForecasts(forecastResults) {
+    if (forecastResults.length) {
+      //  return forecastResults.map((forecast, index) => {
+
+      //             return <Forecast
+      //                         key={index}
+      //                         searchResults={searchResults}
+      //                         fUnits={fUnits}
+      //                         forecastResults={forecastResults}
+      //                         weekday={"Mon"}
+      //                       />
+      // })
+      return (
+        <Forecast
+          fUnits={fUnits}
+          forecastResults={forecastResults}
+        />
+      );
+    } else {
+      return <p>loading...</p>;
+    }
+  }
 
   return (
     <div className="App">
@@ -34,31 +46,7 @@ export default function App() {
           />
           <CityMainInfo searchResults={searchResults} fUnits={fUnits} />
           <div className="row justify-content-center px-3">
-            <Forecast
-              fUnits={fUnits}
-              forecastResults={forecastResults}
-              weekday={"Mon"}
-            />
-            <Forecast
-              fUnits={fUnits}
-              forecastResults={forecastResults}
-              weekday={"Tue"}
-            />
-            <Forecast
-              fUnits={fUnits}
-              forecastResults={forecastResults}
-              weekday={"Wed"}
-            />
-            <Forecast
-              fUnits={fUnits}
-              forecastResults={forecastResults}
-              weekday={"Thu"}
-            />
-            <Forecast
-              fUnits={fUnits}
-              forecastResults={forecastResults}
-              weekday={"Fri"}
-            />
+            {displayForecasts(forecastResults)}
           </div>
         </div>
         <Footer />

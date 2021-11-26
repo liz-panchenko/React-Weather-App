@@ -4,6 +4,8 @@ import LastUpdateDate from "./LastUpdateDate";
 import MainIcon from "./MainIcon";
 
 export default function CityMainInfo({ searchResults, fUnits }) {
+  if (!searchResults) return <div>loading...</div>
+  
   function mainTemp(searchResults) {
     let mainCTemp = Math.round(searchResults.main.temp);
     let mainFTemp = Math.round((mainCTemp * 9) / 5 + 32);

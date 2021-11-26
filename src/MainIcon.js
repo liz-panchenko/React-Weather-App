@@ -11,6 +11,8 @@ import Mist from "./images/50.mist.png";
 import NightMist from "./images/50n.mist.png";
 
 export default function MainIcon({ searchResults }) {
+  if (!searchResults) return <div>loading...</div>;
+  
     let apiIcon = searchResults.weather[0].icon;
     let iconObject = {
       "01d": ClearSky,
