@@ -1,0 +1,54 @@
+.Forecast .card-container {
+  padding: 10px 10px;
+}
+.Forecast .weather-card {
+  background-color: #e2faff;
+  border: 1px solid #e2faff;
+  border-radius: 5px;
+  box-shadow: -12px -8px 40px 5px rgba(255, 255, 255, 0.55),
+    10px 13px 25px 5px rgba(0, 26, 255, 0.05);
+}
+.Forecast .weather-card:hover {
+  box-shadow: inset 7px 10px 20px 5px rgba(0, 26, 255, 0.05),
+    inset -12px -8px 40px 5px rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+}
+.Forecast .weather-card .card-body {
+  margin: 6px 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.Forecast .weather-card .card-body:hover {
+  border: none;
+}
+.Forecast .weather-card .card-title {
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: #bab1ff;
+}
+.Forecast .weather-card .card-img {
+  max-width: 40%;
+}
+.Forecast .weather-card .card-text {
+  padding-top: 5px;
+  font-size: 1.25rem;
+}
+.Forecast .card-text {
+  background: linear-gradient(
+    104.9deg,
+    #c4b6ff 4.92%,
+    #c4b6ff 6.69%,
+    #a4a7ff 29.7%,
+    #99bcff 51.77%,
+    #4ab0fe 72.24%,
+    #42a4ff 89.49%
+  );
+  border-radius: 15px;
+  /* background: linear-gradient(to right, #30CFD0 0%, #330867 100%); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Forecast .daily-temp {
+  font-size: 1.3rem;
+}

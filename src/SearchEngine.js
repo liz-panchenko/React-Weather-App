@@ -22,6 +22,7 @@ export default function SearchEngine(props) {
     );
   } else {
     makeAPIrequest();
+    // forecastAPIrequest();
     return <div>Loading....</div>;
   }
   function makeAPIrequest() {
