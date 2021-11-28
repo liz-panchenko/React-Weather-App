@@ -23,7 +23,7 @@ export default function Forecast({ fUnits, forecastResults }) {
  return day;
   }
   function forecastIcon() {
- let forecastIconCode = iconCode.weather[0].icon;
+ let forecastIconCode = forecastResults[0].weather[0].icon;
  let forecastIconObject = {
    "01d": ClearSky,
    "01n": NightClearSky,
@@ -44,7 +44,6 @@ export default function Forecast({ fUnits, forecastResults }) {
    "50d": Mist,
    "50n": NightMist,
  };
- console.log(iconCode);
  return (
    <img
      src={forecastIconObject[forecastIconCode]}
