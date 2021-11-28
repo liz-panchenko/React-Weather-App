@@ -12,34 +12,33 @@ import NightMist from "./images/50n.mist.png";
 
 export default function MainIcon({ searchResults }) {
   if (!searchResults) return <div>loading...</div>;
-  
-    let apiIcon = searchResults.weather[0].icon;
-    let iconObject = {
-      "01d": ClearSky,
-      "01n": NightClearSky,
-      "02d": FewClouds,
-      "02n": NightFewClouds,
-      "03d": Clouds,
-      "03n": Clouds,
-      "04d": Clouds,
-      "04n": Clouds,
-      "09d": Rain,
-      "09n": Rain,
-      "10d": Rain,
-      "10n": Rain,
-      "11d": Thunderstorm,
-      "11n": Thunderstorm,
-      "13d": Snow,
-      "13n": Snow,
-      "50d": Mist,
-      "50n": NightMist,
-    };
-    
-    return (
-      <img
-        src={iconObject[apiIcon]}
-        className="main-icon img-fluid"
-        alt={searchResults.weather[0].description}
-      />
-    );
+
+  let apiIcon = searchResults.weather[0].icon;
+  let iconObject = {
+    "01d": ClearSky,
+    "01n": NightClearSky,
+    "02d": FewClouds,
+    "02n": NightFewClouds,
+    "03d": Clouds,
+    "03n": Clouds,
+    "04d": Clouds,
+    "04n": Clouds,
+    "09d": Rain,
+    "09n": Rain,
+    "10d": Rain,
+    "10n": Rain,
+    "11d": Thunderstorm,
+    "11n": Thunderstorm,
+    "13d": Snow,
+    "13n": Snow,
+    "50d": Mist,
+    "50n": NightMist,
+  };
+  return (
+    <img
+      src={iconObject[apiIcon]}
+      className="main-icon img-fluid"
+      alt={searchResults.weather[0].description}
+    />
+  );
 }
