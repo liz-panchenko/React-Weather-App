@@ -55,33 +55,10 @@
   color: #ffffff;
 }
 
-.Navbar .current-location-button {
-  display: inline;
-  width: max-content;
-  background-color: #42a4ff;
-  border: 1px solid #42a4ff;
-  border-radius: 5px;
-  padding: 6px 12px;
-  color: #ffffff;
-}
-
-.Navbar .current-location-button:hover {
-  border: 1px solid #42a4ff;
-  background: linear-gradient(
-    104.9deg,
-    #c4b6ff 4.92%,
-    #c4b6ff 6.69%,
-    #a4a7ff 29.7%,
-    #99bcff 51.77%,
-    #4ab0fe 72.24%,
-    #42a4ff 89.49%
-  );
-  color: #ffffff;
-}
 
 .Navbar .temperature-unit-button {
-  background-color: #b7dcff;
-  border: 1px solid #b7dcff;
+  background-color: #e2faff;
+  border: 2px solid #42a4ff;
   border-radius: 5px;
   color: #42a4ff;
   font-family: "Roboto", sans-serif;
@@ -89,7 +66,7 @@
 }
 
 .Navbar .temperature-unit-button:hover {
-  border: 1px solid #0b5ed7;
+  border: 2px solid #0b5ed7;
   background: linear-gradient(
     104.9deg,
     #c4b6ff 4.92%,
