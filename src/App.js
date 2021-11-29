@@ -14,7 +14,7 @@ export default function App() {
     if (forecastResults.length) {
       return (
         <div className="row justify-content-center px-3">
-          {forecastResults.map(function(forecastResultsDay, index){
+          {forecastResults.map(function (forecastResultsDay, index) {
             if (index < 5) {
               return (
                 <Forecast
@@ -23,6 +23,8 @@ export default function App() {
                   forecastResultsDay={forecastResultsDay}
                 />
               );
+            } else {
+              return null;
             }
           })}
         </div>
