@@ -14,11 +14,17 @@ export default function App() {
     if (forecastResults.length) {
       return (
         <div className="row justify-content-center px-3">
-          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[0]} />
-          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[1]} />
-          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[2]} />
-          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[3]} />
-          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[4]} />
+          {forecastResults.map(function(forecastResultsDay, index){
+            if (index < 5) {
+              return (
+                <Forecast
+                  key={index}
+                  fUnits={fUnits}
+                  forecastResultsDay={forecastResultsDay}
+                />
+              );
+            }
+          })}
         </div>
       );
     } else {
