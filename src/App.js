@@ -6,31 +6,23 @@ import Forecast from "./Forecast";
 import "./App.css";
 
 export default function App() {
-  console.log("vvv");
   const [fUnits, setFUnits] = useState(false);
   const [forecastResults, setForecastResults] = useState([]);
   const [searchResults, setSearchResults] = useState(null);
 
   function displayForecasts(forecastResults) {
     if (forecastResults.length) {
-      //  return forecastResults.map((forecast, index) => {
-
-      //             return <Forecast
-      //                         key={index}
-      //                         searchResults={searchResults}
-      //                         fUnits={fUnits}
-      //                         forecastResults={forecastResults}
-      //                         weekday={"Mon"}
-      //                       />
-      // })
       return (
-        <Forecast
-          fUnits={fUnits}
-          forecastResults={forecastResults}
-        />
+        <div className="row justify-content-center px-3">
+          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[0]} />
+          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[1]} />
+          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[2]} />
+          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[3]} />
+          <Forecast fUnits={fUnits} forecastResultsDay={forecastResults[4]} />
+        </div>
       );
     } else {
-      return <p>loading...</p>;
+      return null;
     }
   }
 
@@ -45,9 +37,7 @@ export default function App() {
             fUnits={fUnits}
           />
           <CityMainInfo searchResults={searchResults} fUnits={fUnits} />
-          <div className="row justify-content-center px-3">
-            {displayForecasts(forecastResults)}
-          </div>
+          {displayForecasts(forecastResults)}
         </div>
         <Footer />
       </div>

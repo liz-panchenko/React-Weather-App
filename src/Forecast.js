@@ -11,50 +11,46 @@ import Snow from "./images/13.snow.png";
 import Mist from "./images/50.mist.png";
 import NightMist from "./images/50n.mist.png";
 
-
-export default function Forecast({ fUnits, forecastResults }) {
-//   console.log(forecastIconCode);
-  //   console.log("aaaaa");
-  // let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+export default function Forecast({ fUnits, forecastResultsDay }) {
   function forecastDay() {
- let forecastWeekday = new Date(forecastResults[0].dt * 1000);
- let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
- let day = days[forecastWeekday.getDay()];
- return day;
+    let forecastWeekday = new Date(forecastResultsDay.dt * 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let day = days[forecastWeekday.getDay()];
+    return day;
   }
   function forecastIcon() {
- let forecastIconCode = forecastResults[0].weather[0].icon;
- let forecastIconObject = {
-   "01d": ClearSky,
-   "01n": NightClearSky,
-   "02d": FewClouds,
-   "02n": NightFewClouds,
-   "03d": Clouds,
-   "03n": Clouds,
-   "04d": Clouds,
-   "04n": Clouds,
-   "09d": Rain,
-   "09n": Rain,
-   "10d": Rain,
-   "10n": Rain,
-   "11d": Thunderstorm,
-   "11n": Thunderstorm,
-   "13d": Snow,
-   "13n": Snow,
-   "50d": Mist,
-   "50n": NightMist,
- };
- return (
-   <img
-     src={forecastIconObject[forecastIconCode]}
-     className="card-img img-fluid"
-     alt="weather icon"
-   />
- );
+    let forecastIconCode = forecastResultsDay.weather[0].icon;
+    let forecastIconObject = {
+      "01d": ClearSky,
+      "01n": NightClearSky,
+      "02d": FewClouds,
+      "02n": NightFewClouds,
+      "03d": Clouds,
+      "03n": Clouds,
+      "04d": Clouds,
+      "04n": Clouds,
+      "09d": Rain,
+      "09n": Rain,
+      "10d": Rain,
+      "10n": Rain,
+      "11d": Thunderstorm,
+      "11n": Thunderstorm,
+      "13d": Snow,
+      "13n": Snow,
+      "50d": Mist,
+      "50n": NightMist,
+    };
+    return (
+      <img
+        src={forecastIconObject[forecastIconCode]}
+        className="card-img img-fluid"
+        alt="weather icon"
+      />
+    );
   }
   function forecastTemp() {
-    let forecastMaxCTemp = Math.round(forecastResults[0].temp.max);
-    let forecastMinCTemp = Math.round(forecastResults[0].temp.min);
+    let forecastMaxCTemp = Math.round(forecastResultsDay.temp.max);
+    let forecastMinCTemp = Math.round(forecastResultsDay.temp.min);
     let forecastMaxFTemp = Math.round((forecastMaxCTemp * 9) / 5 + 32);
     let forecastMinFTemp = Math.round((forecastMinCTemp * 9) / 5 + 32);
     if (fUnits) {
