@@ -16,6 +16,6 @@
   text-decoration: none;
 }
 
-.Footer a:hover,{
+.Footer a:hover{
   text-decoration: underline;
 }
