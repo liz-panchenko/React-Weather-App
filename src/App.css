@@ -44,32 +44,3 @@ body {
     text-align: center !important;
   }
 }
-
-@supports (-webkit-touch-callout: default) {
-  .Navbar .search-input {
-    border: 2px solid #b7dcff;
-    box-sizing: border-box;
-    border-radius: 5px !important;
-    background-color: #e2faff !important;
-    padding: 6px 12px;
-    color: #42a4ff;
-  }
-
-  .Navbar .search-input:focus-visible {
-    background-color: #e2faff;
-    border: 2px solid #b7dcff;
-    outline-color: #a4a7ff !important;
-    color: #42a4ff;
-  }
-
-  .Navbar ::placeholder {
-    color: #b7dcff;
-    font-family: "Roboto", sans-serif;
-    font-size: 1em;
-    padding: 6px 12px;
-  }
-}
-/* @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
-{  #safari {
-  
-}} */
