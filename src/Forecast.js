@@ -64,12 +64,12 @@ export default function Forecast({ fUnits, forecastResultsDay }) {
       );
     } else {
       return (
-        <div>
+        <span>
           <span>
             <strong>{forecastMaxCTemp}</strong> | {forecastMinCTemp}
           </span>
           °C
-        </div>
+        </span>
       );
     }
   }
