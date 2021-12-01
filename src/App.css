@@ -45,7 +45,7 @@ body {
   }
 }
 
-@supports (-webkit-touch-callout: none) {
+@supports (-webkit-touch-callout: default) {
   .Navbar .search-input {
     border: 2px solid #b7dcff;
     box-sizing: border-box;
