@@ -12,6 +12,7 @@ export default function SearchEngine(props) {
           className="search-input"
           autoComplete="off"
           placeholder="City"
+          value={searchInput}
           onChange={updateSearchInput}
         />
         <button className="search-button" type="submit">
@@ -26,6 +27,7 @@ export default function SearchEngine(props) {
   }
   function makeAPIrequest() {
     setIsLoaded(true);
+    setSearchInput("");
     let apiKey = "999ce561ec0a25a794172c87e6a0379b";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getApiInfo);
